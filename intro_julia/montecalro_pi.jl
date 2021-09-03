@@ -1,0 +1,33 @@
+using PyPlot: plt
+using PyCall
+anm = pyimport("matplotlib.animation")
+
+function montecalro_pi(Nmax = 10)
+    cnt = 0
+    x_plot = []
+    y_plot = []
+
+    for i in 1:Nmax
+        x = rand()
+        y = rand()
+        if x^2 + y^2 < 1
+            cnt += 1
+        end
+        append!(x_plot, x)
+        append!(y_plot, y)
+    end
+    return cnt / Nmax *4
+end
+
+Nlist = []
+pilist = []
+for N in 100:100:100000
+    pi = montecalro_pi(N)
+    append!(Nlist, N)
+    append!(pilist, pi)
+end
+
+plt.plot(Nlist, pilist)
+plt.axhline(π)
+plt.savefig("montecalro_pi_estimate.png")
+plt.show()
