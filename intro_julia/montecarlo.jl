@@ -18,6 +18,7 @@ function montecalro_pi(Nmax = 10)
     return cnt / Nmax *4
 end
 
+
 pi10 = montecalro_pi()
 println("pi10 = $pi10")
 
