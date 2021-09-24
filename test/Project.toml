@@ -1,7 +1,0 @@
-name = "test"
-uuid = "de12c535-5e34-4805-9b87-f97f1520aff4"
-authors = ["{toshitnk} <{toshiya0417tanaka@gmail.com}>"]
-version = "0.1.0"
-
-[deps]
-DifferentialEquations = "0c46a032-eb83-5123-abaf-570d42b7fbaa"
