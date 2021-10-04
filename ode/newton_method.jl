@@ -1,3 +1,5 @@
+using Plots
+
 function func(x)
 	f = x/2 - sin(x)
 	return f
@@ -18,14 +20,15 @@ function newton(x0, N)
 end
 
 x0 = π/2
-N = 10
-xN = newton(x0, N)
-
-println(xN)
+scatter([x0], [0], label="x0")
+for N ∈ 1:10
+	xn = newton(x0, N)
+	println(xn)
+	scatter!([xn], [0], label="N=$(N)")
+end
 
 #-----------------------
-x = 0:0.1:π
+x = 1.8:0.01:2.1
 y = x ./ 2 .- sin.(x)
 
-plot(x, y)
-scatter!([xN], [0])
+plot!(x, y, label="y=f(x)")
