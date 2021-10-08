@@ -9,3 +9,4 @@ for T ∈ T_list
 	plot!(ϵ, fd(T), label="T=$T K")
 end
 plot!()
+savefig("fermi_dirac.png")
