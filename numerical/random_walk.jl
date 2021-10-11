@@ -1,6 +1,6 @@
 using Plots
 using Random
-Random.seed!(13526463)
+# Random.seed!(13526463)
 
 for i ∈ 1:50
 	num = 0 + rand((-1, 1))
